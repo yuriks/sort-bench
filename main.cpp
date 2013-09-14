@@ -30,10 +30,16 @@ int main()
 	double stdsort_time = stopPerfTimer();
 
 	v = v_base;
+	printf("Now sorting: std::stable_sort\n");
+	startPerfTimer();
+	std::stable_sort(std::begin(v), std::end(v));
+	double stable_sort_time = stopPerfTimer();
+
+	v = v_base;
 	printf("Now sorting: qsort\n");
 	startPerfTimer();
 	qsort(v.data(), v.size(), sizeof(int), int_compare);
 	double qsort_time = stopPerfTimer();
 
-	printf("std::sort %f -- qsort %f\n", stdsort_time, qsort_time);
+	printf("std::sort %f -- std::stable_sort %f -- qsort %f\n", stdsort_time, stable_sort_time, qsort_time);
 }
