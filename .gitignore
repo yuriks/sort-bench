@@ -1,0 +1,7 @@
+*.swp
+*.opensdf
+/Release
+/Debug
+/sort_bench.sdf
+/sort_bench.*.suo
+/sort_bench.vcxproj.user
